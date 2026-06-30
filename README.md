@@ -6,11 +6,17 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Eye Catches
 
+[recording-eye-catch-track-switch-animation.webm](https://github.com/user-attachments/assets/e690544f-8dd3-46b2-9edf-31ab31e0a6d5)
+
 > Switching between tracks animation.
+
+[recording-record-spin-animation.webm](https://github.com/user-attachments/assets/9812103d-3ec4-41df-84ac-49bf87d30985)
 
 > Record spin animation.
 
 ## Application Tour
+
+[recording-application-tour.webm](https://github.com/user-attachments/assets/0528be5e-9275-4044-96ee-335021cc3832)
 
 > Audiovisual tour of the application pages.
 
