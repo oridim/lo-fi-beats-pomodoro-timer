@@ -16,9 +16,15 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Screenshots
 
+![](./assets/screenshot-landing-page.webp)
+
 > Landing Page
 
+![](./assets/screenshot-completed-tasks-page.webp)
+
 > Completed Tasks Page
+
+![](./assets/screenshot-timer-page.webp)
 
 > Timer Page
 
