@@ -1,0 +1,14 @@
+<div
+  class="scene"
+  [style.--playlist-carousel-current-index]="playlistService.selectedTrackIndex$ | async"
+  (transitionend)="onTransitionEnd($event)"
+  (transitionstart)="onTransitionStart($event)"
+>
+  <div class="playlist">
+    @for (track of playlistService.tracks$ | async; track $index) {
+      <div class="playlist-item" [style.--playlist-carousel-index]="$index">
+        <track-cover [track]="track" />
+      </div>
+    }
+  </div>
+</div>

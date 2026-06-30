@@ -1,0 +1,5 @@
+<h3 class="title-line" [attr.data-is-playing]="isPlaying$ | async">NOW PLAYING</h3>
+
+<span class="track-title" [attr.data-is-playing]="isPlaying$ | async">
+  {{ trackTitle$ | async }}
+</span>

@@ -1,0 +1,11 @@
+<input
+  class="text-input"
+  type="text"
+  [(ngModel)]="value"
+  [autocomplete]="autocomplete"
+  [maxlength]="maxlength"
+  [minlength]="minlength"
+  [placeholder]="placeholder"
+  (change)="onChange($event)"
+  (input)="onInput($event)"
+/>

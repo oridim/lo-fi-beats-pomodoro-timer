@@ -1,0 +1,30 @@
+<page-container variant="vertical">
+  <page-header>
+    <page-title>POMODORO TIMER</page-title>
+  </page-header>
+
+  <input-group>
+    <text-input
+      placeholder="WHAT ARE YOU WORKING ON?"
+      maxlength="32"
+      minlength="1"
+      [(value)]="taskTitle"
+    />
+
+    <control-group>
+      <action-button
+        variant="primary"
+        [disabled]="taskTitle.length === 0"
+        (click)="onStartTimerClick($event)"
+      >
+        <svg lucidePlay></svg>
+        START TIMER
+      </action-button>
+
+      <action-button href="/completed">
+        <svg lucideListChecks></svg>
+        COMPLETED TASKS
+      </action-button>
+    </control-group>
+  </input-group>
+</page-container>

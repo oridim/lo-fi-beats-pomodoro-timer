@@ -1,0 +1,16 @@
+<control-group variant="horizontal">
+  <text-button [disabled]="!(isPlaying$ | async)" (click)="onSkipClick($event)">
+    <svg lucideSkipForward></svg>
+    Skip
+  </text-button>
+
+  <text-button (click)="onMarkCompletedClick($event)">
+    <svg lucideCheckCheck></svg>
+    Mark Completed
+  </text-button>
+
+  <text-button href="/completed">
+    <svg lucideX></svg>
+    Quit
+  </text-button>
+</control-group>

@@ -1,0 +1,13 @@
+:host {
+  display: contents;
+}
+
+.page-sub-title {
+  color: var(--gray-3);
+  font-size: var(--font-size-4);
+  font-family: 'Roboto Mono', var(--font-mono);
+  font-weight: var(--font-weight-3);
+
+  letter-spacing: var(--font-letterspacing-1);
+  margin-inline-end: calc(var(--font-letterspacing-1) * -2);
+}

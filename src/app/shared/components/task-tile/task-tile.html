@@ -1,0 +1,17 @@
+<div class="header">
+  @if (task.isCompleted) {
+    <svg lucideCircleCheck></svg>
+  } @else {
+    <svg lucideCircleX></svg>
+  }
+
+  <span>
+    {{ task.title }}
+  </span>
+</div>
+
+<text-button variant="red" (click)="onClearClick($event)">
+  <svg lucideTrash></svg>
+
+  CLEAR
+</text-button>

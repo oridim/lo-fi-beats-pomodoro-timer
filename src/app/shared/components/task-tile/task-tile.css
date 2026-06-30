@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: var(--size-2) var(--size-3);
+
+  border: var(--border-size-1) solid var(--gray-9);
+  border-radius: var(--radius-1);
+
+  transition: border-color 0.15s var(--ease-quad-in);
+
+  &:hover {
+    border-color: var(--gray-7);
+  }
+}
+
+.header {
+  display: flex;
+
+  align-items: center;
+
+  gap: var(--size-3);
+
+  & ::ng-deep > .lucide-circle-check {
+    color: var(--green-4);
+  }
+
+  & ::ng-deep > .lucide-circle-x {
+    color: var(--red-4);
+  }
+}

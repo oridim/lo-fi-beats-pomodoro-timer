@@ -1,0 +1,9 @@
+:host {
+  display: flex;
+  flex-direction: column;
+
+  padding-inline: var(--size-2);
+  gap: var(--size-3);
+
+  overflow: hidden auto;
+}

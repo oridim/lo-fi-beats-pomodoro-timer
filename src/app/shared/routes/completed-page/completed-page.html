@@ -1,0 +1,25 @@
+<page-container>
+  <page-header>
+    <page-title>TASK HISTORY</page-title>
+  </page-header>
+
+  <scroll-list>
+    @for (task of tasks$ | async; track task.uuid) {
+      <task-tile [task]="task" />
+    }
+  </scroll-list>
+
+  <page-footer>
+    <control-group variant="horizontal">
+      <action-button href="/">
+        <svg lucideHome></svg>
+        MAIN MENU
+      </action-button>
+
+      <action-button variant="red" (click)="onClearClick($event)">
+        <svg lucideTrash></svg>
+        CLEAR ALL
+      </action-button>
+    </control-group>
+  </page-footer>
+</page-container>

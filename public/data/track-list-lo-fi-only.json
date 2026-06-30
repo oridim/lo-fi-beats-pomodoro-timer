@@ -1,0 +1,50 @@
+{
+  "categories": [
+    {
+      "categoryTitle": "Lo-Fi Beats",
+      "categoryID": "lo-fi",
+      "tracks": [
+        {
+          "trackID": "broken-gears-and-painted-ponies",
+          "trackTitle": "Broken Gears and Painted Ponies"
+        },
+        {
+          "trackID": "cello-on-the-counter",
+          "trackTitle": "Cello on the Counter"
+        },
+        {
+          "trackID": "cloister-beneath-the-storm",
+          "trackTitle": "Cloister Beneath the Storm"
+        },
+        {
+          "trackID": "glass-against-the-gale",
+          "trackTitle": "Glass Against the Gale"
+        },
+        {
+          "trackID": "midnight-correspondence",
+          "trackTitle": "Midnight Correspondence"
+        },
+        {
+          "trackID": "office-aviary",
+          "trackTitle": "Office Aviary"
+        },
+        {
+          "trackID": "rocking-chair-blues",
+          "trackTitle": "Rocking Chair Blues"
+        },
+        {
+          "trackID": "sidewalk-clockwork",
+          "trackTitle": "Sidewalk Clockwork"
+        },
+        {
+          "trackID": "the-hull-groans-alone",
+          "trackTitle": "The Hull Groans Alone"
+        },
+        {
+          "trackID": "the-mason-s-rest",
+          "trackTitle": "The Mason's Rest"
+        }
+      ]
+    }
+  ]
+}

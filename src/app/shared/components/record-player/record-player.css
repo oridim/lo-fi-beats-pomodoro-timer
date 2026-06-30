@@ -1,0 +1,240 @@
+@property --record-player-platter-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@property --record-player-arm-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: -10deg;
+}
+
+@property --record-player-glow-intensity {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0.25;
+}
+
+@property --record-player-morph-progression {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+@keyframes spin-up {
+  0% {
+    --record-player-platter-angle: var(--record-player-persisted-platter-angle);
+    --record-player-glow-intensity: var(--record-player-persisted-glow-intensity);
+    --record-player-morph-progression: var(--record-player-persisted-morph-progression);
+  }
+  100% {
+    --record-player-platter-angle: calc(var(--record-player-persisted-platter-angle) + 90deg);
+    --record-player-glow-intensity: 1;
+    --record-player-morph-progression: 1;
+  }
+}
+
+@keyframes spin-infinite {
+  0% {
+    --record-player-platter-angle: var(--record-player-persisted-platter-angle);
+    --record-player-glow-intensity: 1;
+    --record-player-morph-progression: 1;
+  }
+  50% {
+    --record-player-platter-angle: calc(var(--record-player-persisted-platter-angle) + 180deg);
+    --record-player-glow-intensity: 1;
+    --record-player-morph-progression: 0;
+  }
+  100% {
+    --record-player-platter-angle: calc(var(--record-player-persisted-platter-angle) + 360deg);
+    --record-player-glow-intensity: 1;
+    --record-player-morph-progression: 1;
+  }
+}
+
+@keyframes spin-down {
+  0% {
+    --record-player-platter-angle: var(--record-player-persisted-platter-angle);
+    --record-player-glow-intensity: var(--record-player-persisted-glow-intensity);
+    --record-player-morph-progression: var(--record-player-persisted-morph-progression);
+  }
+  100% {
+    --record-player-platter-angle: calc(var(--record-player-persisted-platter-angle) + 90deg);
+    --record-player-glow-intensity: 0;
+    --record-player-morph-progression: 0;
+  }
+}
+
+:host {
+  display: flex;
+  position: relative;
+
+  justify-content: center;
+  align-items: center;
+
+  aspect-ratio: 1;
+  inline-size: 100%;
+}
+
+.platter {
+  display: flex;
+  position: absolute;
+
+  align-items: center;
+  justify-content: center;
+
+  block-size: 75%;
+  inline-size: 75%;
+
+  transform: rotate(var(--record-player-platter-angle));
+
+  &[data-animation='spin-up'] {
+    animation: spin-up 2s var(--ease-in-1) forwards;
+  }
+
+  &[data-animation='spin-infinite'] {
+    animation: spin-infinite 7s linear infinite;
+  }
+
+  &[data-animation='spin-down'] {
+    animation: spin-down 2s var(--ease-out-1) forwards;
+  }
+}
+
+.glow {
+  position: absolute;
+
+  block-size: 105%;
+  inline-size: 105%;
+
+  object-fit: cover;
+
+  border-radius: calc(40% - var(--record-player-morph-progression) * 10%)
+    calc(60% + var(--record-player-morph-progression) * 10%)
+    calc(30% + var(--record-player-morph-progression) * 40%)
+    calc(70% - var(--record-player-morph-progression) * 40%) /
+    calc(60% - var(--record-player-morph-progression) * 10%)
+    calc(30% + var(--record-player-morph-progression) * 10%)
+    calc(70% - var(--record-player-morph-progression) * 10%)
+    calc(40% + var(--record-player-morph-progression) * 10%);
+
+  filter: blur(45px) saturate(200%) brightness(125%);
+  scale: calc(0.95 + var(--record-player-glow-intensity) * 0.15);
+
+  opacity: calc(var(--record-player-glow-intensity) * 0.8);
+}
+
+.vinyl {
+  display: flex;
+  position: absolute;
+
+  align-items: center;
+  justify-content: center;
+
+  inset: 0;
+
+  background: radial-gradient(
+    circle closest-side,
+    black 70%,
+    var(--gray-8) 70.5%,
+    black 71%,
+    black 85%,
+    var(--gray-8) 85.5%,
+    black 86%,
+    black 99%,
+    var(--gray-8) 99.5%,
+    black 100%
+  );
+  border-radius: 50%;
+
+  mask-image: radial-gradient(circle at center, transparent 6%, black 6%);
+}
+
+.vinyl-label {
+  block-size: 40%;
+  inline-size: 40%;
+
+  background: var(--record-player-vinyl-src);
+  background-size: 125% 125%;
+  background-position: center;
+
+  border-radius: 50%;
+}
+
+.pivot {
+  position: absolute;
+
+  block-size: 10%;
+  inline-size: 10%;
+
+  top: 2.5%;
+  right: 2.5%;
+
+  background: var(--gray-9);
+  border: var(--border-size-2) solid var(--gray-7);
+  border-radius: 50%;
+}
+
+.arm {
+  position: absolute;
+
+  block-size: 35%;
+  inline-size: 2%;
+
+  top: 7.5%;
+  right: 6.5%;
+
+  background: var(--gray-1);
+  border-radius: var(--radius-3);
+
+  transform: rotate(var(--record-player-arm-angle));
+  transform-origin: top center;
+  transition: --record-player-arm-angle 0.346s var(--ease-quad-in-out);
+  transition-delay: 0.25s;
+
+  &::after {
+    position: absolute;
+    content: '';
+
+    inline-size: 300%;
+    block-size: 20%;
+
+    bottom: -6.66%;
+    left: -100%;
+
+    background: var(--gray-6);
+    border-radius: var(--radius-3);
+  }
+
+  &[data-is-playing='true'] {
+    --record-player-arm-angle: 35deg;
+  }
+}
+
+.track-progress {
+  inset: 0;
+
+  fill: none;
+  stroke-width: 2;
+
+  transform: rotate(-90deg);
+}
+
+.track-progress-background {
+  stroke: var(--gray-7);
+}
+
+.track-progress-circle {
+  stroke: var(--gray-1);
+  stroke-linecap: butt;
+
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--record-player-track-progress-value));
+
+  cx: 50%;
+  cy: 50%;
+  r: calc(50% - var(--border-size-2));
+
+  transition: stroke-dashoffset 0.15s var(--ease-quad-in);
+}

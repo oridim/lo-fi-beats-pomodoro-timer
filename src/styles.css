@@ -1,0 +1,22 @@
+@import 'open-props/style';
+@import 'open-props/normalize/dark';
+
+html {
+  background-color: black;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+
+  margin: 0;
+
+  inline-size: 100dvw;
+  block-size: 100dvh;
+
+  font-family: 'Montserrat', var(--font-sans);
+}

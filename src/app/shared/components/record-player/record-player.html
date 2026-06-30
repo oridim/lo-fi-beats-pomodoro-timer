@@ -1,0 +1,33 @@
+<div
+  #platter
+  class="platter"
+  (animationstart)="onAnimationStart($event)"
+  (animationend)="onAnimationEnd($event)"
+>
+  <img class="glow" [src]="`/images/${track.categoryID}/${track.trackID}.webp`" />
+
+  <div class="vinyl">
+    <div
+      class="vinyl-label"
+      [style.--record-player-vinyl-src]="`url('/images/${track.categoryID}/${track.trackID}.webp')`"
+    ></div>
+  </div>
+</div>
+
+<div
+  class="arm"
+  [attr.data-is-playing]="isPlaying$ | async"
+  (transitionend)="onTransitionEnd($event)"
+  (transitionstart)="onTransitionStart($event)"
+></div>
+
+<div class="pivot">
+  <svg
+    class="track-progress"
+    viewBox="0 0 24 24"
+    [style.--record-player-track-progress-value]="trackAudioProgression$ | async"
+  >
+    <circle class="track-progress-background"></circle>
+    <circle class="track-progress-circle" pathLength="1"></circle>
+  </svg>
+</div>

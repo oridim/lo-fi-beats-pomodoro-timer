@@ -1,0 +1,7 @@
+:host {
+  display: contents;
+
+  & > ::ng-deep page-container > page-footer {
+    margin-block-start: auto;
+  }
+}

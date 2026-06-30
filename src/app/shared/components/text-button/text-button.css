@@ -1,0 +1,49 @@
+:host {
+  display: contents;
+}
+
+.text-button {
+  display: flex;
+  align-items: center;
+
+  gap: var(--size-3);
+  padding: var(--size-3);
+
+  background: transparent;
+  border: none;
+  color: var(--gray-6);
+
+  font-size: var(--font-size-0);
+  font-weight: var(--font-weight-5);
+  letter-spacing: var(--font-letterspacing-3);
+
+  cursor: pointer;
+
+  text-decoration: none;
+  transition:
+    color 0.15s var(--ease-quad-in),
+    opacity 0.15s var(--ease-quad-in);
+
+  &:is(:disabled, [aria-disabled='true']) {
+    cursor: not-allowed;
+
+    opacity: 0.5;
+  }
+
+  &:not(:is(:disabled, [aria-disabled='true'])) {
+    &:hover {
+      color: var(--gray-1);
+
+      &[data-variant='red'] {
+        color: var(--red-4);
+      }
+    }
+  }
+
+  & > ::ng-deep svg {
+    block-size: var(--size-relative-6);
+    inline-size: var(--size-relative-6);
+
+    opacity: 0.75;
+  }
+}

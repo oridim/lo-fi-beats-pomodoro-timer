@@ -1,0 +1,18 @@
+<ng-template #contentTpl>
+  <ng-content></ng-content>
+</ng-template>
+
+@if (href) {
+  <a class="action-button" [attr.data-variant]="variant" [href]="href" [aria-disabled]="disabled">
+    <ng-container *ngTemplateOutlet="contentTpl" />
+  </a>
+} @else {
+  <button
+    class="action-button"
+    [attr.data-variant]="variant"
+    [disabled]="disabled"
+    (click)="onClick($event)"
+  >
+    <ng-container *ngTemplateOutlet="contentTpl" />
+  </button>
+}

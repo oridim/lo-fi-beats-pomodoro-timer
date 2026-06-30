@@ -1,0 +1,66 @@
+:host {
+  display: contents;
+}
+
+.action-button {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: var(--size-3);
+  padding: var(--size-3) var(--size-6);
+
+  background: transparent;
+  border: var(--border-size-1) solid var(--gray-8);
+  border-radius: var(--radius-pill);
+  color: var(--gray-5);
+
+  font-size: var(--font-size-0);
+  font-weight: var(--font-weight-5);
+  letter-spacing: var(--font-letterspacing-3);
+
+  cursor: pointer;
+
+  text-decoration: none;
+  transition:
+    background-color 0.15s var(--ease-quad-in),
+    border-color 0.15s var(--ease-quad-in),
+    color 0.15s var(--ease-quad-in),
+    opacity 0.15s var(--ease-quad-in);
+
+  &[data-variant='primary'] {
+    border-color: var(--gray-6);
+    color: var(--gray-4);
+  }
+
+  &:is(:disabled, [aria-disabled='true']) {
+    cursor: not-allowed;
+
+    opacity: 0.5;
+  }
+
+  &:not(:is(:disabled, [aria-disabled='true'])) {
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-color: var(--gray-4);
+      color: var(--gray-1);
+
+      &[data-variant='primary'] {
+        border-color: var(--gray-2);
+      }
+
+      &[data-variant='red'] {
+        border-color: var(--red-5);
+        color: var(--red-4);
+      }
+    }
+  }
+
+  & > ::ng-deep svg {
+    block-size: var(--size-relative-7);
+    inline-size: var(--size-relative-7);
+
+    opacity: 0.75;
+  }
+}

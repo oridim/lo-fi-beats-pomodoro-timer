@@ -1,0 +1,102 @@
+{
+  "categories": [
+    {
+      "categoryTitle": "Lo-Fi Beats",
+      "categoryID": "lo-fi",
+      "tracks": [
+        {
+          "trackID": "broken-gears-and-painted-ponies",
+          "trackTitle": "Broken Gears and Painted Ponies"
+        },
+        {
+          "trackID": "cello-on-the-counter",
+          "trackTitle": "Cello on the Counter"
+        },
+        {
+          "trackID": "cloister-beneath-the-storm",
+          "trackTitle": "Cloister Beneath the Storm"
+        },
+        {
+          "trackID": "glass-against-the-gale",
+          "trackTitle": "Glass Against the Gale"
+        },
+        {
+          "trackID": "midnight-correspondence",
+          "trackTitle": "Midnight Correspondence"
+        },
+        {
+          "trackID": "office-aviary",
+          "trackTitle": "Office Aviary"
+        },
+        {
+          "trackID": "rocking-chair-blues",
+          "trackTitle": "Rocking Chair Blues"
+        },
+        {
+          "trackID": "sidewalk-clockwork",
+          "trackTitle": "Sidewalk Clockwork"
+        },
+        {
+          "trackID": "the-hull-groans-alone",
+          "trackTitle": "The Hull Groans Alone"
+        },
+        {
+          "trackID": "the-mason-s-rest",
+          "trackTitle": "The Mason's Rest"
+        }
+      ]
+    },
+    {
+      "categoryTitle": "Café Soundscapes",
+      "categoryID": "cafe-sounds",
+      "tracks": [
+        {
+          "trackID": "airwave-echoes",
+          "trackTitle": "Airwave Echoes"
+        },
+        {
+          "trackID": "bistro-chimes",
+          "trackTitle": "Bistro Chimes"
+        },
+        {
+          "trackID": "midday-shift",
+          "trackTitle": "Midday Shift"
+        },
+        {
+          "trackID": "the-oslo-tap",
+          "trackTitle": "The Oslo Tap"
+        },
+        {
+          "trackID": "the-still-hall",
+          "trackTitle": "The Still Hall"
+        }
+      ]
+    },
+    {
+      "categoryTitle": "Rain Soundscapes",
+      "categoryID": "rain-sounds",
+      "tracks": [
+        {
+          "trackID": "echoes-of-the-storm",
+          "trackTitle": "Echoes of the Storm"
+        },
+        {
+          "trackID": "lightning-and-heather",
+          "trackTitle": "Lightning and Heather"
+        },
+        {
+          "trackID": "rustle-and-chatter",
+          "trackTitle": "Rustle and Chatter"
+        },
+        {
+          "trackID": "the-dripping-chorus",
+          "trackTitle": "The Dripping Chorus"
+        },
+        {
+          "trackID": "songs-beneath-the-canopy",
+          "trackTitle": "Songs Beneath the Canopy"
+        }
+      ]
+    }
+  ]
+}

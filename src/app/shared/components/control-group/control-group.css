@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+  flex-direction: column;
+
+  align-items: stretch;
+
+  gap: var(--size-3);
+
+  inline-size: var(--size-13);
+
+  &[variant='horizontal'] {
+    flex-direction: row;
+
+    gap: var(--size-6);
+
+    inline-size: unset;
+  }
+}

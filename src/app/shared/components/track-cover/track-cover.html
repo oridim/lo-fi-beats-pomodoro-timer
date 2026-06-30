@@ -1,0 +1,11 @@
+<img
+  class="cover"
+  [src]="`/images/${track.categoryID}/${track.trackID}.webp`"
+  [attr.data-is-flipped]="isFlipped | async"
+  (transitionend)="onTransitionEnd($event)"
+  (transitionstart)="onTransitionStart($event)"
+/>
+
+<div class="content" [attr.data-is-flipped]="isFlipped | async">
+  <record-player [track]="track" />
+</div>

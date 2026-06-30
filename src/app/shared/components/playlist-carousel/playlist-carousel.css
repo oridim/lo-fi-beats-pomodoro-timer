@@ -1,0 +1,79 @@
+::ng-deep :root {
+  --playlist-carousel-size: var(--size-fluid-9);
+
+  --playlist-carousel-item-angle: 10deg;
+  --playlist-carousel-item-radius: calc(
+    (var(--playlist-carousel-size) / 2) / tan(var(--playlist-carousel-item-angle) / 2)
+  );
+}
+
+@property --playlist-carousel-current-index {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: true;
+}
+
+:host {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  block-size: var(--playlist-carousel-size);
+  inline-size: 100%;
+
+  &::after {
+    display: block;
+    content: '';
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+      to right,
+      black 0%,
+      black calc(50% - (var(--playlist-carousel-size) * 1.85)),
+      transparent calc(50% - (var(--playlist-carousel-size) * 0.5)),
+      transparent calc(50% + (var(--playlist-carousel-size) * 0.5)),
+      black calc(50% + (var(--playlist-carousel-size) * 1.85)),
+      black 100%
+    );
+  }
+}
+
+.scene {
+  perspective: 1000px;
+
+  block-size: var(--playlist-carousel-size);
+  inline-size: var(--playlist-carousel-size);
+}
+
+.playlist {
+  position: relative;
+
+  block-size: 100%;
+  inline-size: 100%;
+
+  transform-style: preserve-3d;
+  transition: --playlist-carousel-current-index var(--ease-quint-in) 1s;
+}
+
+.playlist-item {
+  --playlist-carousel-angle: calc(
+    (var(--playlist-carousel-index) - var(--playlist-carousel-current-index, 0)) *
+      var(--playlist-carousel-item-angle)
+  );
+
+  position: absolute;
+
+  block-size: var(--playlist-carousel-size);
+  inline-size: var(--playlist-carousel-size);
+
+  transform: translateZ(calc(var(--playlist-carousel-item-radius) * -1))
+    rotateY(var(--playlist-carousel-angle)) translateZ(var(--playlist-carousel-item-radius));
+
+  backface-visibility: hidden;
+}
